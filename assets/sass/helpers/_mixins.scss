@@ -1,0 +1,33 @@
+// Breakpoints
+
+@mixin breakpoint($point, $type) {
+    @if $type == "min" {
+        @if $point == "small" {
+            @media (min-width: 768px) {
+                @content;
+            }
+        } @else if $point == "medium" {
+            @media (min-width: 992px) {
+                @content;
+            }
+        } @else if $point == "large" {
+            @media (min-width: 1200px) {
+                @content;
+            }
+        }
+    } @else if $type == "max" {
+        @if $point == "small" {
+            @media (max-width: 767px) {
+                @content;
+            }
+        } @else if $point == "medium" {
+            @media (max-width: 991px) {
+                @content;
+            }
+        } @else if $point == "large" {
+            @media (min-width: 1200px) {
+                @content;
+            }
+        }
+    }
+}
